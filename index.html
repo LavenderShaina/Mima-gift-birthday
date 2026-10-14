@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#172c3b">
+<meta name="description" content="A tiny pixel world made just for Mima.">
+<title>Mima's Little World ✦</title>
+<style>
+:root{--night:#172c3b;--deep:#203f4b;--pine:#285447;--leaf:#54845a;--grass:#8eb56a;--cream:#fff4d6;--gold:#ffd778;--pink:#ffb9c8;--sky:#8bc7d4;--ink:#18313b;--panel:#f9f0d5;--shadow:#0d202a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--night);color:var(--cream);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;line-height:1.65;image-rendering:pixelated}button,input{font:inherit}button{cursor:pointer}a{color:inherit}.wrap{width:min(100% - 28px,900px);margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:#c9e4d8;font-size:.8rem;gap:12px}.pixel-label{border:2px solid #6f9d87;padding:5px 9px;box-shadow:3px 3px 0 #0d202a}.hero{position:relative;overflow:hidden;min-height:590px;display:flex;align-items:center;justify-content:center;text-align:center;padding:46px 16px 0;background:linear-gradient(#28485a 0%,#527b83 62%,#8ba96e 62%,#8ba96e 68%,#365c49 68%);border:4px solid #0d202a;box-shadow:8px 8px 0 #0d202a}.sun{position:absolute;right:12%;top:13%;width:65px;height:65px;background:var(--gold);box-shadow:0 0 0 10px #ffd77822}.cloud{position:absolute;top:20%;left:12%;width:76px;height:18px;background:#d6eef0;box-shadow:16px -15px #d6eef0,35px 0 #d6eef0,51px -8px #d6eef0}.cloud.c2{top:37%;left:auto;right:8%;transform:scale(.65)}.hero-content{position:relative;z-index:2;max-width:650px;margin-bottom:15px}.eyebrow{font-size:.75rem;letter-spacing:.17em;text-transform:uppercase;color:#e4f0d4}.hero h1{font-size:clamp(2.2rem,8vw,5.3rem);line-height:1.08;letter-spacing:-.07em;margin:15px 0;color:#fff4d6;text-shadow:5px 5px 0 #294a45,8px 8px 0 #173039}.hero p{max-width:470px;margin:22px auto;color:#f5f3d9}.btn{border:0;background:var(--gold);color:var(--ink);padding:12px 16px;font-weight:900;box-shadow:4px 4px 0 #0d202a;transition:transform .12s,box-shadow .12s}.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 #0d202a}.btn.secondary{background:#d2e8d5}.pixel-tree{position:absolute;bottom:0;left:6%;width:70px;height:160px;background:linear-gradient(90deg,#65452f 0 30%,#785337 30% 65%,#65452f 65%);z-index:1}.pixel-tree:before{content:"";position:absolute;bottom:95px;left:-38px;width:145px;height:75px;background:#315b49;box-shadow:15px -35px #3d704f,-10px -15px #477d52}.pixel-tree.right{left:auto;right:7%;transform:scale(.78);transform-origin:bottom}.section{padding:62px 0}.section h2{font-size:clamp(1.4rem,4vw,2rem);margin:0 0 8px}.section-intro{color:#b8d0c5;margin:0 0 25px;font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.card{background:var(--panel);color:var(--ink);padding:20px;border:3px solid #0d202a;box-shadow:6px 6px 0 #0d202a}.card h3{margin:0 0 8px;font-size:1.05rem}.card p{margin:0 0 14px;font-size:.88rem}.card .btn{box-shadow:3px 3px 0 #9eaa8b}.icon{font-size:1.7rem;display:block;margin-bottom:10px}.small{font-size:.78rem;color:#49636a}.secret-note{display:none;background:#fff7dd;border:2px dashed #c49d45;padding:13px;margin-top:14px;white-space:pre-wrap}.secret-note.show{display:block;animation:pop .3s ease-out}@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.music-list{display:grid;gap:10px}.track{display:flex;align-items:center;gap:12px;background:#e7f0dc;padding:12px;border:2px solid #9ab78b}.track .disc{width:38px;height:38px;flex:0 0 38px;background:#47745c;border:5px solid #284b3c;border-radius:50%;display:grid;place-items:center;color:white}.track .track-info{flex:1;min-width:0}.track strong{display:block}.track a{color:#285447;font-size:.75rem;font-weight:bold}.gamebox{background:#223f49;border:3px solid #0d202a;box-shadow:6px 6px 0 #0d202a;padding:22px;text-align:center}.gamefield{position:relative;min-height:200px;margin:15px 0;background:linear-gradient(#719da1 0 70%,#81a85d 70%);border:3px solid #102d35;overflow:hidden}.game-instructions{color:#d0e4d8;font-size:.85rem}.star{position:absolute;border:0;background:transparent;font-size:27px;filter:drop-shadow(2px 2px 0 #294c40);padding:0;line-height:1;animation:twinkle 1.4s infinite alternate}.star:focus-visible{outline:3px solid white}@keyframes twinkle{to{transform:scale(1.2) rotate(8deg)}}.game-status{font-size:.9rem;color:var(--gold);min-height:1.7em}.letter{background:#fff4d6;color:#273f3c;border:4px solid #0d202a;box-shadow:7px 7px 0 #0d202a;padding:clamp(20px,5vw,42px);position:relative}.letter:before{content:"✦ ✦ ✦";display:block;color:#b78a3e;letter-spacing:.5em;margin-bottom:16px}.letter p{font-family:Georgia,serif;font-size:1.08rem;line-height:1.8}.letter .signoff{font-family:ui-monospace,monospace;font-weight:bold;color:#3d7055}.footer{text-align:center;padding:30px 0 48px;color:#a8c6b8;font-size:.75rem}.gate{position:fixed;inset:0;z-index:10;display:grid;place-items:center;padding:20px;background:rgba(11,27,35,.96)}.gate.hidden{display:none}.gate-card{width:min(100%,460px);background:var(--panel);color:var(--ink);border:4px solid #0d202a;box-shadow:8px 8px 0 #000;padding:clamp(22px,5vw,38px);text-align:center}.gate-icon{font-size:3rem}.gate h1{font-size:1.7rem;line-height:1.2}.gate p{font-size:.88rem}.password-row{display:flex;gap:8px;margin-top:18px}.password-row input{min-width:0;flex:1;border:2px solid #577766;background:#fffdf1;padding:11px;color:var(--ink)}.error{color:#a13d4c;min-height:1.4em;font-size:.8rem}.tiny{font-size:.7rem;color:#63786e}.hidden-accessible{position:absolute;left:-9999px}@media(max-width:600px){.hero{min-height:530px}.hero h1{font-size:clamp(2.25rem,12vw,4rem)}.grid{grid-template-columns:1fr}.section{padding:46px 0}.pixel-tree{transform:scale(.65);transform-origin:bottom left;left:-2%}.pixel-tree.right{right:-2%;left:auto}.topbar{font-size:.67rem}.password-row{flex-direction:column}.password-row .btn{width:100%}.card{padding:17px}}
+#musicToggle{position:fixed;right:14px;bottom:14px;z-index:20;border:2px solid #8fb49b;background:#315747;color:#fff4d6;padding:10px 13px;font-weight:bold;box-shadow:3px 3px 0 #0d202a}#musicToggle:focus-visible{outline:3px solid #ffd778;outline-offset:3px}</style>
+</head>
+<body>
+<!-- Put your MP3 beside this HTML file and name it my-song.mp3. -->
+<audio id="bgMusic" loop preload="metadata">
+  <source src="my-song.mp3" type="audio/mpeg">
+</audio>
+<button id="musicToggle" type="button" onclick="toggleMusic()" aria-pressed="false">🎵 Play music</button>
+<div class="gate" id="gate" role="dialog" aria-modal="true" aria-labelledby="gate-title">
+  <div class="gate-card">
+    <div class="gate-icon">🌙</div>
+    <p class="eyebrow" style="color:#47745c">A tiny world, just for you</p>
+    <h1 id="gate-title">Before you enter…</h1>
+    <p>Every little world has a secret door. Enter the password Shaina picked for you.</p>
+    <form id="password-form">
+      <div class="password-row"><input id="password" type="password" autocomplete="off" placeholder="Secret password" aria-label="Secret password" required><button class="btn" type="submit">UNLOCK ✦</button></div>
+      <div class="error" id="password-error" aria-live="polite"></div>
+    </form>
+    <p class="tiny">Hint: ask Shaina for the secret word. (It's case-insensitive.)</p>
+  </div>
+</div>
+<header class="wrap topbar"><span class="pixel-label">✦ MIMA'S WORLD</span><span>CO-OP MODE: ON ♡</span></header>
+<main class="wrap">
+  <section class="hero" aria-label="Welcome">
+    <div class="sun" aria-hidden="true"></div><div class="cloud" aria-hidden="true"></div><div class="cloud c2" aria-hidden="true"></div>
+    <div class="pixel-tree" aria-hidden="true"></div><div class="pixel-tree right" aria-hidden="true"></div>
+    <div class="hero-content"><div class="eyebrow">A little gift for my favourite person</div><h1>WELCOME TO<br>MIMA'S WORLD</h1><p>A tiny place for my babyy, the person I'm really glad I met. I hope you like it! I love you so much</p><button class="btn" onclick="document.getElementById('quests').scrollIntoView({behavior:'smooth'})">START EXPLORING ↓</button></div>
+  </section>
+  <section class="section" id="quests"><h2>✦ Your little quest log</h2><p class="section-intro">Start exploring</p>
+    <div class="grid">
+      <article class="card"><span class="icon">📦</span><h3>Loot box: a tiny note</h3><p>A small reminder waiting just for you.</p><button class="btn" onclick="reveal('note1',this)">OPEN LOOT BOX</button><div class="secret-note" id="note1">Surprise! I am so happy that I met you my baby! A man I'd always look upto and my everythinggg. I love you so muchhh <3..</div></article>
+<article class="card">
+  <span class="icon">🎧</span>
+  <h3>Our soundtrack</h3>
+  <p>A few songs that remind me of you. ♡</p>
+
+  <div class="music-list">
+
+    <!-- SONG 1 -->
+    <div class="track">
+      <div class="disc">♫</div>
+      <div class="track-info">
+        <strong>Song One</strong>
+        <span class="small">A song that reminds me of you</span><br>
+        <a href="https://open.spotify.com/track/2psRActEWsTlYYd7EDoyVR?si=d6bc7619dd664f9d"
+           target="_blank"
+           rel="noopener noreferrer">
+          Listen on Spotify ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- SONG 2 -->
+    <div class="track">
+      <div class="disc">♪</div>
+      <div class="track-info">
+        <strong>Song Two</strong>
+        <span class="small">What I feel when I'm with you</span><br>
+        <a href="https://open.spotify.com/track/1dGr1c8CrMLDpV6mPbImSI?si=e076b7209044400c"
+           target="_blank"
+           rel="noopener noreferrer">
+          Listen on Spotify ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- SONG 3 -->
+    <div class="track">
+      <div class="disc">♫</div>
+      <div class="track-info">
+        <strong>Our Playlist</strong>
+        <span class="small">A little collection, just for us</span><br>
+        <a href="https://open.spotify.com/playlist/0LEzCjH8eTiEXVepWPMS2R?si=2uCaenyBTN2B6tQUP4y1GA"
+           target="_blank"
+           rel="noopener noreferrer">
+          Listen together ♡ ↗
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="small" style="margin-top:12px">
+    Every song holds a little piece of us. ♡
+  </p>
+</article>
+      <article class="card"><span class="icon">🗝️</span><h3>Side quest: a compliment</h3><p>One button. One random little boost.</p><button class="btn" onclick="compliment()">ROLL FOR COMPLIMENT</button><div class="secret-note" id="compliment-box" aria-live="polite"></div></article>
+      <article class="card"><span class="icon">🧭</span><h3>Hidden coordinates</h3><p>Tap to discover a little secret from your co-op partner.</p><button class="btn" onclick="reveal('note2',this)">REVEAL SECRET</button><div class="secret-note" id="note2">Secret discovered: Join this on minecraft: Yousopretty.aternos.me </div></article>
+    </div>
+  </section>
+  <section class="section"><h2>⭐ Mini-game: collect the stars</h2><p class="section-intro">A very important mission. The reward is bragging rights.</p>
+    <div class="gamebox"><div class="game-instructions">Tap or click 5 stars before the night gets any sleepier.</div><div class="gamefield" id="gamefield" aria-label="Star collecting game"></div><div class="game-status" id="game-status" aria-live="polite">Stars collected: 0 / 5</div><button class="btn secondary" onclick="startGame()" id="game-start">START QUEST</button></div>
+  </section>
+  <section class="section" id="letter"><h2>💌 The final unlock</h2><p class="section-intro">You made it. Here's the bit I really wanted you to have.</p>
+    <div class="letter"><p>Hey Mima,</p><p>Babeeee... Happiest Birthdayy bbyyy.. You are 19 now!! I'm so happy! My baby big baby. I wasn't there with you for the 19 years of your life.. however I'd lovee to spend the next with you. God you dont know how amazing of a person you are. Your everything pulls me like a magnet. I'm so glad that I am able to spend time with such a beautiful soul! The way you understand me and the comfort we share.. it's so beautiful.. I've never really felt this way, this close to anyone else. Although it has been only a very short time with you but I don't know there is something about you that just makes me put trust in you. My god I wanna stay with you so much, I wanna know you, understand you, love you, care for you, make love with you.</p><p>I don't really know what the future brings to us, but I really hope we both stay strong and continue being with each other. 💚</p><p class="signoff">— your baby, mommy, lover, fan who would always support you. ♡</p></div>
+  </section>
+</main>
+<footer class="wrap footer">BUILT WITH LOTS OF LOVE FOR MY BABYYY · GG, MIMA ♡</footer>
+<script>
+// Change this word to your own secret password before sharing.
+const SECRET_PASSWORD = 'Misha';
+const gate = document.getElementById('gate');
+if (sessionStorage.getItem('mimaWorldUnlocked') === 'yes') gate.classList.add('hidden');
+document.getElementById('password-form').addEventListener('submit', function(event){
+  event.preventDefault();
+  const entered = document.getElementById('password').value.trim().toLowerCase();
+  if (entered === SECRET_PASSWORD.toLowerCase()) { playSfx('unlock'); gate.classList.add('hidden'); sessionStorage.setItem('mimaWorldUnlocked','yes'); document.getElementById('password-error').textContent=''; }
+  else { playSfx('error'); document.getElementById('password-error').textContent='Not quite! Try the secret word Mima gave you. ♡'; }
+});
+function reveal(id,button){const note=document.getElementById(id);note.classList.toggle('show');playSfx(note.classList.contains('show')?'open':'close');button.textContent=note.classList.contains('show')?'CLOSE NOTE':'OPEN AGAIN';}
+const compliments=['You make ordinary conversations feel less ordinary.','You are my tiny babyy.','You have main-character energy crazy aura.','You are my best co-op partner.','You are genuinely fun to get to know.','Achievement unlocked: being pretty darn memorable.'];
+function compliment(){const box=document.getElementById('compliment-box');box.textContent=compliments[Math.floor(Math.random()*compliments.length)];box.classList.add('show');playSfx('open');}
+let collected=0;let gameActive=false;
+function spawnStar(field){const star=document.createElement('button');star.className='star';star.type='button';star.textContent=['✦','★','✧'][Math.floor(Math.random()*3)];star.setAttribute('aria-label','Collect star');star.style.left=(4+Math.random()*88)+'%';star.style.top=(5+Math.random()*75)+'%';star.addEventListener('click',()=>{if(!gameActive)return;collected++;playSfx(collected>=5?'win':'star');star.remove();document.getElementById('game-status').textContent=collected>=5?'Quest complete! Your reward: one very proud co-op partner. ♡':`Stars collected: ${collected} / 5`;if(collected>=5){gameActive=false;document.getElementById('game-start').textContent='PLAY AGAIN';}else spawnStar(field);});field.appendChild(star);}
+function startGame(){playSfx('quest');const field=document.getElementById('gamefield');field.innerHTML='';collected=0;gameActive=true;document.getElementById('game-status').textContent='Stars collected: 0 / 5';document.getElementById('game-start').textContent='RESTART QUEST';for(let i=0;i<5;i++)spawnStar(field);}
+
+// PERSONAL MUSIC: place a real MP3 named "my-song.mp3" beside this HTML file.
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+bgMusic.volume = 0.35;
+
+async function toggleMusic() {
+  try {
+    if (bgMusic.paused) {
+      await bgMusic.play();
+      musicToggle.textContent = "⏸ Pause music";
+      musicToggle.setAttribute("aria-pressed", "true");
+    } else {
+      bgMusic.pause();
+      musicToggle.textContent = "🎵 Play music";
+      musicToggle.setAttribute("aria-pressed", "false");
+    }
+  } catch (error) {
+    console.error("Could not play my-song.mp3:", error);
+    musicToggle.textContent = "⚠ Check music file";
+    alert("Music could not play. Put my-song.mp3 in the same folder as this HTML file, and make sure the filename matches exactly.");
+  }
+}
+
+// Small retro sound effects generated in the browser; no extra files needed.
+let sfxContext = null;
+function playSfx(type = "click") {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    if (!sfxContext) sfxContext = new AudioContextClass();
+    if (sfxContext.state === "suspended") sfxContext.resume();
+
+    const patterns = {
+      click: [660],
+      open: [523.25, 659.25, 783.99],
+      close: [659.25, 523.25],
+      error: [220, 196],
+      unlock: [523.25, 659.25, 783.99, 1046.5],
+      star: [783.99, 987.77],
+      win: [523.25, 659.25, 783.99, 1046.5],
+      quest: [392, 523.25, 659.25]
+    };
+    const notes = patterns[type] || patterns.click;
+    notes.forEach((frequency, index) => {
+      const startAt = sfxContext.currentTime + index * 0.09;
+      const oscillator = sfxContext.createOscillator();
+      const gain = sfxContext.createGain();
+      oscillator.type = "sine";
+      oscillator.frequency.setValueAtTime(frequency, startAt);
+      gain.gain.setValueAtTime(0.0001, startAt);
+      gain.gain.exponentialRampToValueAtTime(type === "click" ? 0.035 : 0.055, startAt + 0.015);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startAt + 0.13);
+      oscillator.connect(gain);
+      gain.connect(sfxContext.destination);
+      oscillator.start(startAt);
+      oscillator.stop(startAt + 0.15);
+    });
+  } catch (error) {
+    // The page still works if sound is unavailable.
+    console.debug("Sound effects unavailable", error);
+  }
+}
+
+// Add gentle click sounds to the page's interactive controls.
+document.querySelectorAll("button").forEach(button => {
+  if (button.id !== "musicToggle") {
+    button.addEventListener("click", () => {
+      // More specific effects are played by the functions below.
+      if (!button.matches("#game-start")) playSfx("click");
+    });
+  }
+});
+
+</script>
+</body>
+</html>
